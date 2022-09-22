@@ -1,0 +1,47 @@
+// :root {
+//     --#{$prefix}card-bac: #ffffff;
+//     @each $color, $value in $theme-colors {
+//         --#{$prefix}#{$color}: #{$value};
+
+//         /* ------------------------------ Colored Link ------------------------------ */
+//         --#{$prefix}colored-link-#{$color}-hover-color: #{if(
+//                 color-contrast($value) == $color-contrast-light,
+//                 shade-color($value, $link-shade-percentage),
+//                 tint-color($value, $link-shade-percentage)
+//             )};
+//     }
+
+//     --#{$prefix}body-bg: #{map-get($grays, "200")};
+
+//     --#{$prefix}body-color: #{$body-color};
+//     --#{$prefix}headings-color: #{map-get($grays, "900")};
+
+//     --#{$prefix}navbar-vertical-bg: #{map-get($grays, "800")};
+
+//     /*------------------------card-------------------------*/
+// }
+
+:root {
+    // body
+    --#{$prefix}body-bg: #{$body-bg};
+    --#{$prefix}body-color: #{$body-color};
+    --#{$prefix}body-color-rgb: #{to-rgb($body-color)};
+    --#{$prefix}card-bg: #{$white};
+}
+
+// [data-theme="dark"] {
+//     $theme-all-dark-colors: map_merge($dark-grays, $theme-dark-colors) !default;
+
+//     @each $color, $value in $theme-all-dark-colors {
+//         --#{$prefix}#{$color}: #{$value};
+//     }
+
+//     --#{$prefix}card-bac: #{map-get($dark-grays, "200")};
+
+//     --#{$prefix}body: #{map-get($dark-grays, "100")};
+//     --#{$prefix}body-bg: #{map-get($dark-grays, "100")};
+//     --#{$prefix}body-color: #{map-get($dark-grays, "300")};
+//     --#{$prefix}headings-color: #{rgba($white, 1)};
+//     --#{$prefix}border-color: #{map-get($dark-grays, "400")};
+//     --#{$prefix}navbar-vertical-bg: #{map-get($dark-grays, "200")};
+// }

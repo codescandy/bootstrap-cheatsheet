@@ -1,0 +1,111 @@
+/* -------------------------------------------------------------------------- */
+/*                                  Override                                  */
+/* -------------------------------------------------------------------------- */
+
+.gray-circle-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #eff0f6;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-width: 0;
+}
+
+.darkmode {
+    // background-color: $gray-900;
+}
+
+.darkmode .gray-circle-btn {
+    background-color: #222235;
+}
+
+.darkmode .sun-icon {
+    display: none;
+}
+
+.darkmode .moon-icon {
+    display: initial;
+    fill: #fff;
+}
+
+.moon-icon {
+    display: none;
+}
+
+.darkmode {
+    @each $color, $value in $theme-dark-colors {
+        .darkmode__bg-#{$color} {
+            background-color: $value !important;
+        }
+        .darkmode__text-#{$color} {
+            color: $value !important;
+        }
+    }
+
+    ::selection {
+        background-color: $warning;
+    }
+}
+
+// .darkmode {
+
+//     --#{$prefix}card-bac: #000000;
+
+//     --#{$prefix}body: #{map-get($dark-grays, "200")};
+//     --#{$prefix}body-bg: #{map-get($dark-grays, "200")};
+//     --#{$prefix}body-color: #{map-get($dark-grays, "500")};
+//     --#{$prefix}headings-color: #{rgba($white, 1)};
+//     --#{$prefix}border-color: #{map-get($dark-grays, "400")};
+
+//     $theme-all-dark-colors: map_merge($dark-grays, $theme-dark-colors) !default;
+
+//     @each $color, $value in $theme-all-dark-colors {
+//         --#{$prefix}#{$color}: #{$value};
+//     }
+
+// }
+
+[data-theme="dark"] {
+    // Color system - Dark Mode only
+    $gray-100: #1a1d21;
+    $gray-200: #212529;
+    $gray-300: #2a2f34;
+    $gray-400: #878a99;
+    $gray-500: #adb5bd;
+    $gray-600: #bfc8e2;
+    $gray-700: #ced4da;
+    $gray-800: #eff2f7;
+    $gray-900: #f3f6f9;
+
+    $grays: (
+        "100": $gray-100,
+        "200": $gray-200,
+        "300": $gray-300,
+        "400": $gray-400,
+        "500": $gray-500,
+        "600": $gray-600,
+        "700": $gray-700,
+        "800": $gray-800,
+        "900": $gray-900,
+    );
+
+    // Prefix for :root CSS variables
+    @each $color, $value in $grays {
+        --#{$variable-prefix}gray-#{$color}: #{$value};
+    }
+
+    // body
+    --#{$prefix}body-bg: #{$gray-100};
+    --#{$prefix}body-color: #{$gray-700};
+    --#{$prefix}body-color-rgb: #{to-rgb($gray-700)};
+
+    --#{$prefix}card-bg: #{$gray-900};
+}
