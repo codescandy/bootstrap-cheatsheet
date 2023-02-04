@@ -1,17 +1,19 @@
 // Import all of Bootstrap's CSS
-
+// Bootstrap functions
+@import "../../node_modules/bootstrap/scss/functions";
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "./theme/variables";
 @import "~bootstrap/scss/bootstrap";
-@import "colors.scss";
-@import "root.scss";
+// @import "colors.scss";
+// @import "root.scss";
 
 body {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-$body-bg: #f3f6f9;
-$body-color: $gray-900;
-
-$card-bg: var(--#{$prefix}card-bg) !default;
+ 
+ 
 /**
    * Bootstrap "Journal code" icon
    * @link https://icons.getbootstrap.com/icons/journal-code/
@@ -101,7 +103,7 @@ $card-bg: var(--#{$prefix}card-bg) !default;
 
 /* Layout */
 @media (min-width: 1200px) {
-  body {
+  .body-css {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 1fr 4fr 1fr;
@@ -158,7 +160,7 @@ $card-bg: var(--#{$prefix}card-bg) !default;
     /* rtl:end:ignore */
     z-index: -1;
     content: "";
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) calc(100% - 3rem), rgba(255, 255, 255, 0.01));
+    // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) calc(100% - 3rem), rgba(255, 255, 255, 0.01));
   }
 
   .bd-cheatsheet article,
